@@ -1,0 +1,146 @@
+import java.util.Scanner;
+
+public class SistemaEscolar (
+
+public static void main(String[] args) {
+
+Scanner entrada new Scanner(System.in);
+
+double[] notas = new double[8];
+
+//8 notas anuais
+
+double[] mediasBimestrais = new double[4]; // 4 bimestres
+
+final double MEDIA APROVACAO = 7.0;
+
+System.out.println("== SISTEMA ESCOLAR ===");
+
+System.out.println("Digite as 8 notas do aluno (valores
+
+de 0 a 10):");
+// Leitura das 8 notas com validação for (int i = 0; i < notas.length; i++) {
+
+double nota;
+
+while (true) {
+
+System.out.print("Nota" + (i+1)+": ");
+
+nota entrada.nextDouble();
+
+if (nota >= 0.0 && nota <= 10.0) (
+
+break; // nota válida
+
+} else {
+
+System.out.println("Valor inválidol Digite
+
+uma nota entre 0 e 10.");
+
+}
+// Cálculo das médias bimestrais
+
+// Assumindo 2 notas por bimestre:
+
+// 1º bimestre: notas [0] e notas [1]
+
+// 2º bimestre: notas [2] e notas [3]
+
+// 3º bimestre: notas [4] e notas [5]
+
+// 4º bimestre: notas [6] e notas [7]
+
+int indiceNota = 0;
+
+for (int b = 0; b
+
+< mediasBimestrais.length; b++) {
+
+mediasBimestrais [b] =
+
+(notas[indiceNota] + notas[indiceNota + 1]) /
+
+2.0;
+// Exibição dos resultados
+
+System.out.println("\n=-=-=-
+
+RESULTADOS =====");
+
+System.out.println("Notas
+
+informadas:");
+
+for (int i = 0; i < notas.length;
+
+1++) {
+
+System.out.printf("Nota %d: %.2f%
+
+п", (1 + 1), notas[i]);
+
+}
+// Cálculo da média final (média das médias bimestrais)
+
+double somaMedias = 0;
+
+for (double mediaBim: mediasBimestrais) {
+
+somaMedias += mediaBim;
+
+}
+// Assumindo 2 notas por bimestre:
+
+// 1º bimestre: notas[0] e notas[1] 1
+
+// 2º bimestre: notas [2] e notas[3]
+
+// 3º bimestre: notas [4] e notas[5]
+
+// 4º bimestre: notas [6] e notas[7]
+
+int indiceNota = 0;
+
+for (int b= 8; b < mediasBimestrais.length; b++) {
+
+mediasBimestrais[b] = (notas[indiceNota] +
+
+notas [indiceNota + 1]) / 2.0;
+
+indiceNota += 2;
+
+}
+indiceNota += 2;
+
+}
+
+// Cálculo da média final (média das 1
+
+médias bimestrais)
+
+double somaMedias = 0;
+
+for (double mediaBim:
+
+mediasBimestrais) {
+
+somaMedias += mediaBim;
+
+}
+double mediaFinal = somaMedias /
+
+mediasBimestrais.length;
+
+// Determinar situação do aluno String situacao;
+
+if (mediaFinal >= MEDIA_APROVACAO) {
+
+situacao = "APROVADO";
+
+} else {
+
+situacao = "REPROVADO";
+
+}
